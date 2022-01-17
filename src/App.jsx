@@ -1,5 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
+
+import React, { useState } from 'react';
 
 import Interval from './components/Interval';
 import Sum from './components/Sum';
@@ -7,6 +8,10 @@ import Average from './components/Average';
 import PrizeDraw from './components/PrizeDraw';
 
 function App() {
+
+  const [min, setMin] = useState(0);
+  const [max, setMax] = useState(10);
+
   return (
     <div className="App">
       <h1 className='title'>
@@ -15,14 +20,17 @@ function App() {
       </h1>
       <div className='div-rows'>
         <div className='row'>
-          <Interval 
-          >
-          </Interval>
+          <Interval
+            min={min}
+            max={max}
+            onMinChanged={setMin}
+            onMaxChanged={setMax}
+          ></Interval>
         </div>
         <div className='row'>
-          <Sum></Sum>
-          <Average></Average>
-          <PrizeDraw></PrizeDraw>
+          <Sum min={min} max={max}></Sum>
+          <Average min={min} max={max}></Average>
+          <PrizeDraw min={min} max={max}></PrizeDraw>
         </div>
       </div>
     </div>
