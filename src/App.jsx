@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
-import Card from './components/Layout/Card';
 import Interval from './components/Interval';
+import Sum from './components/Sum';
+import Average from './components/Average';
+import PrizeDraw from './components/PrizeDraw';
 
 function App() {
   return (
@@ -18,25 +20,9 @@ function App() {
           </Interval>
         </div>
         <div className='row'>
-          <Card 
-              title='Card #2'
-              color='#f27d0c'
-              colorContent='#111'
-          >
-            W
-          </Card>
-          <Card 
-            title='Card #3'
-            color='#222233'
-          >
-            Y
-          </Card>
-          <Card 
-            title='Card #3'
-            color='#8A084B'
-          >
-            Z
-          </Card>
+          <Sum></Sum>
+          <Average></Average>
+          <PrizeDraw></PrizeDraw>
         </div>
       </div>
     </div>
