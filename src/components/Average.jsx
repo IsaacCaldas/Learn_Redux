@@ -5,8 +5,6 @@ import Card from './Layout/Card';
 
 export default props => {
 
-  const { min, max } = props;
-
   return (
 
     <Card title='Numbers Average'
@@ -14,7 +12,7 @@ export default props => {
       colorContent='#35A30E' 
     >
       <div className="Average">
-        <span>Result: <b>{ (max + min) / 2}</b></span>
+        <span>Result: <b>5</b></span>
       </div>
     </Card>
 
