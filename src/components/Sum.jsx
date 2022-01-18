@@ -1,9 +1,13 @@
 import '../styles/Interval.css';
 
 import React from 'react';
+import { connect } from 'react-redux';
+
 import Card from './Layout/Card';
 
-export default props => {
+const Sum = props => {
+
+  const {min, max} = props
 
   return (
 
@@ -12,10 +16,19 @@ export default props => {
       colorContent='#C81515' 
     >
       <div className="Sum">
-        <span>Result: <b>10</b></span>
+        <span>Result: <b>{min + max}</b></span>
       </div>
     </Card>
 
   );
 
 }
+
+function mapStateToProps(state){
+  return {
+    min: state.numbers.min,
+    max: state.numbers.max
+  }
+}
+
+export default connect(mapStateToProps)(Sum);

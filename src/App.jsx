@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <h1 className='title'>
-        <span class="dot"></span> React-Redux <span class="dot"></span>
+        <span className="dot"></span> React-Redux <span className="dot"></span>
         <hr></hr>
       </h1>
       <div className='div-rows'>

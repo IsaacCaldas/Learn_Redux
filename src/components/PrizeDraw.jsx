@@ -1,9 +1,14 @@
 import '../styles/Interval.css';
 
 import React from 'react';
+import { connect } from 'react-redux';
+
 import Card from './Layout/Card';
 
-export default props => {
+const PrizeDraw = props => {
+
+  const {min, max} = props
+  const random = parseInt(Math.random() * (max - min) + min);
 
   return (
 
@@ -12,10 +17,19 @@ export default props => {
       colorContent='#4016AC'  
     >
       <div className="Prize Draw">
-        <span>Result: <b>6</b></span>
+        <span>Result: <b>{random}</b></span>
       </div>
     </Card>
 
   );
 
 }
+
+function mapStateToProps(state){
+  return {
+    min: state.numbers.min,
+    max: state.numbers.max
+  }
+}
+
+export default connect(mapStateToProps)(PrizeDraw);

@@ -4,8 +4,8 @@ const reducers = combineReducers({
   numbers: function(state, action){
     console.log(state, '', action);
     return {
-      min: 0,
-      max: 10
+      min: 7,
+      max: 40
     }
   },
   names: function(state, action){
