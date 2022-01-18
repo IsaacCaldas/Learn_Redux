@@ -29,14 +29,14 @@ const Interval = props => {
 
 }
 
-function mapStateToProps(state){
+function mapStateToProp(state){
   return {
     min: state.numbers.min,
     max: state.numbers.max
   }
 }
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProp(dispatch){
   return {
     changeMin(newNumber) {
       // Action Creator -> action
@@ -52,5 +52,5 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(
-  mapStateToProps, 
-  mapDispatchToProps)(Interval);
+  mapStateToProp, 
+  mapDispatchToProp)(Interval);
